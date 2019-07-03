@@ -1,0 +1,10 @@
+- hosts: web
+  tasks: 
+   - name: copy file
+     copy: 
+      src: copy.html
+      dest: /var/www/html/copy.html
+   - name: copy using template
+     template: 
+      src: template.html.j2
+      dest: /var/www/html/template.html

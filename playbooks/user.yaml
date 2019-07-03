@@ -1,0 +1,11 @@
+- hosts: web
+  tasks: 
+   - name: create user
+     user: 
+      name: raviraj
+      state: present
+   - name: create file
+     file: 
+      path: /tmp/training
+      state: directory  
+    

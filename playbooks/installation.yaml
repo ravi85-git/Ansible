@@ -1,0 +1,10 @@
+- hosts: web
+  tasks: 
+   - name: install nginx
+     apt: 
+      name: nginx
+      state: present
+   - name: stop nginx
+     service: 
+      name: nginx
+      state: restarted   

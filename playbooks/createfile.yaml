@@ -1,0 +1,6 @@
+- hosts: web
+  tasks: 
+   - name: create files
+     file: 
+      path: /tmp/images 
+      state: touch

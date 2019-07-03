@@ -1,0 +1,8 @@
+- hosts: web
+  tasks: 
+   - name: create test user
+     user: 
+      name: test
+      uid: 8888
+      state: present
+      home: /var/tmp/test

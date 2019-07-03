@@ -1,0 +1,16 @@
+- hosts: web
+  tasks: 
+   - name: create directory
+     file: 
+      path: /var/tmp/mydirectory
+      state: directory
+      owner: root
+   - name: create file inside directory
+     file: 
+      path: /var/tmp/mydirectory/customlog
+      state: touch
+      owner: test
+   - name: copy log file into newly creted file
+     copy: 
+      src: /var/log/syslog
+      dest: /var/tmp/mydirectory/customlog

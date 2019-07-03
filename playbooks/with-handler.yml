@@ -1,0 +1,23 @@
+- hosts: web
+  tasks:
+    - name: copy file
+      copy:
+        src: copy.html
+        dest: /var/www/html/index.html
+      notify:
+        - service stop
+    - name: testactivity
+      file:
+        name: test
+        state: touch
+      notify:
+        - service start
+  handlers:
+    - name: service stop
+      service:
+        name: nginx
+        state: stopped
+    - name: service start
+      service:
+         name: nginx
+         state: started

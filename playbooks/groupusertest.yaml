@@ -1,0 +1,13 @@
+- hosts: web
+  tasks: 
+   - name: create group
+     group: 
+      name: grouptest
+      gid: 7777
+   - name: create user for that group
+     user: 
+      name: usertest
+      uid: 6666
+      group: grouptest
+      comment: my first user
+      state: present
